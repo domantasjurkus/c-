@@ -1,0 +1,5 @@
+4
+Aenkija      1 4
+Kauno        2 4
+Utenos       1 3
+Alytaus      2 1

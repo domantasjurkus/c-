@@ -1,0 +1,4 @@
+Maziausias greitis 0.71 mm/s
+Vidutinis greitis 1.09 mm/s
+Didziausias greitis 1.4 mm/s
+Is viso nukeliauta: 8.75 mm

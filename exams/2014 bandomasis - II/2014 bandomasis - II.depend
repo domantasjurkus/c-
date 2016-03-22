@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1399354567 source:d:\bulka\c++\egzaminai\2014 bandomasis - ii\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<string>
+

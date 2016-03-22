@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1402488640 source:d:\bulka\c++\itbe pasiruosimui\2 uzd 1\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+

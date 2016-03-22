@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1380730445 source:d:\bulka\c++\mokyklos knyga\1.3 pav\main.cpp
+	<iostream>
+	<fstream>
+
+1442666753 source:d:\bulka\csnit\c++\gabijos\3 pav\main.cpp
+	<iostream>
+	<math.h>
+

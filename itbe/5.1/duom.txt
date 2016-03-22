@@ -1,0 +1,4 @@
+3
+Varğuva-Praha       09	34	17	48
+Praha-Viena         12	04	18	08
+Viena-Budapeğtas    09	54	12	32

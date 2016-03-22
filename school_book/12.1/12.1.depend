@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1394105133 source:d:\bulka\c++\mokyklos knyga\12.1\main.cpp
+	<iostream>
+	<fstream>
+

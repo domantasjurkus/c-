@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1391441648 source:d:\bulka\c++\egzaminai\2010.1\main.cpp
+	<iostream>
+	<fstream>
+

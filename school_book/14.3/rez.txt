@@ -1,0 +1,10 @@
+Uz sildyma:     207.5
+Uz telefona:    13.95
+Uz vandeni:     19.45
+----------------------
+Vardas          Moketi
+----------------------
+Rimas           7.50
+Robertas        13.95
+Jurgis          205.00
+Matas           14.45

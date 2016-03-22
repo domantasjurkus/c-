@@ -1,0 +1,106 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+const char duom[] = "Z1.txt";
+const char rez[] = "Z1rez.txt";
+const int cMax = 100;
+//-----
+void skaityti(int &n1, int &n2, int &n, int P[]);
+int kiek_pirkeju(int n1, int n2, int n, int P[], int &nupirkta_1kg, int &nupirkta_2kg);
+int kiek_nusipirko_paskutinis(int P[], int aptarnauta);
+void spausdinti(int nupirkta_1kg, int nupirkta_2kg, int aptarnauta, int P[]);
+//-----
+int main()
+{
+    int n1 = 0;     //1kg pakuoèiø kiekis
+    int n2 = 0;     //2kg pakuoèiø kiekis
+    int n = 0;      //pirkëjø skaièius
+    int P[cMax];    //kiek kilogramø şirniø pageidauja kiekvienas pirkëjas
+    int nupirkta_1kg = 0;
+    int nupirkta_2kg = 0;
+
+    skaityti(n1, n2, n, P);
+    int aptarnauta = kiek_pirkeju(n1, n2, n, P, nupirkta_1kg, nupirkta_2kg);
+    cout << aptarnauta << endl;
+    int paskutinis = kiek_nusipirko_paskutinis(P, aptarnauta);
+    cout << paskutinis << endl;
+
+    spausdinti(nupirkta_1kg, nupirkta_2kg, aptarnauta, P);
+
+    return 0;
+}
+
+void skaityti(int &n1, int &n2, int &n, int P[])
+{
+    ifstream fd(duom);
+    fd >> n1 >> n2 >> n;
+
+    for (int i = 0; i < n; i++)
+        fd >> P[i];
+
+    fd.close();
+}
+
+int kiek_pirkeju(int n1, int n2, int n, int P[], int &nupirkta_1kg, int &nupirkta_2kg)
+{
+    //kiek kg şirniø turi pardavëjæs?
+    int turima = n1 + 2*n2;
+    int aptarnauta = 0;
+
+    //şiûrime, kiek kiekvienas pirkëjas nori nusipirkti
+    for (int i = 0; i < n; i++)
+    {
+        if (turima >= 1)            //jeigu turima bent viena 1kg pakuotë - pirkimas ávyksta
+        {
+            int perkama = P[i];     //naujame kintamajame laikome perkamø kg skaièiø
+
+            while (perkama > 1)     //kol perkama 2kg arba daugiau, bandome parduoti didesnes pakuotes
+            {
+                if (n2>0)           //jeigu tu pakuoèiø yra
+                {
+                    perkama -= 2;   //sumaşiname perkamø kg skaièiø
+                    turima -= 2;    //sumaşiname likusiø kg skaièiø
+                    n2 -= 1;        //sumaşiname 2kg pakuoèiø skaièiø
+                    nupirkta_2kg++; //padidiname nupirktø 2g pakuoiø skaièiø
+                }
+                else if (n1>0)          //jeigu 2kg pakuoèiø nebeliko, parduodame dvi 1kg pakuotes
+                {
+                    perkama -= 2;       //analogiğkai su 1kg pakuotëmis
+                    turima -= 2;
+                    n1 -= 2;
+                    nupirkta_1kg += 2;
+                }
+            }
+
+            //dabar dar liks viena 1kg pakuotë
+            perkama -= 1;
+            turima -= 1;
+            n1--;
+            nupirkta_1kg++;
+
+            if (perkama > 0)    //jeigu dar norima pirkti, o pakuoèiø nebeliko
+
+
+            aptarnauta++;
+        }
+    }
+
+    return aptarnauta;
+}
+
+int kiek_nusipirko_paskutinis(int P[], int aptarnauta)
+{
+    //jeigu aptarnavo n şmoniø, paskutinio aptarnauto şmogaus indeksas bus n-1
+    return P[aptarnauta-1];
+}
+
+void spausdinti(int nupirkta_1kg, int nupirkta_2kg, int aptarnauta, int P[])
+{
+    ofstream fr(rez);
+
+    fr << nupirkta_1kg << " " << nupirkta_2kg << endl;
+    fr << aptarnauta << endl;
+    fr << P[aptarnauta-1] << endl;
+
+    fr.close();
+}

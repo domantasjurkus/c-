@@ -1,0 +1,11 @@
+Gele	Laikas
+1	12
+2	9
+3	16
+4	4
+5	16
+6	16
+7	8
+Visos geles nuvys po 16 dienu.
+Ilgiausiai zydi nr.:
+ 3 5 6

@@ -1,0 +1,29 @@
+ Tipas  Dydis 
+--------------
+   v     45
+   v     44
+   v     44
+   m     38
+   m     40
+   v     44
+   m     37
+   m     38
+   v     40
+   m     36
+   v     39
+--------------
+43 ismeros batu nera
+38 ismeros indeksas: 3
+ Tipas  Dydis 
+--------------
+   v     45
+   v     44
+   v     44
+   m     40
+   v     44
+   m     37
+   m     38
+   v     40
+   m     36
+   v     39
+--------------
